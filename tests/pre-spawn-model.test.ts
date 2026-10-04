@@ -124,6 +124,22 @@ test("U3 resolver unchanged keeps existing resolved model", async () => {
   });
 });
 
+test("U3b resolver receives the agent prompt", async () => {
+  const seen: PreSpawnModelContext[] = [];
+  await withFauxAgent(async (agent, provider, modelId) => {
+    await agent.run("summarize the release notes", {
+      model: `${provider}/${modelId}`,
+      label: "notes",
+      preSpawnModel: (ctx) => {
+        seen.push(ctx);
+        return { action: "unchanged" };
+      },
+    });
+    assert.equal(seen[0]?.prompt, "summarize the release notes");
+    assert.equal(seen[0]?.label, "notes");
+  });
+});
+
 test("U4 resolver use overrides the model actually spawned", async () => {
   const seen: string[] = [];
   await withFauxAgent(async (agent, provider, modelId) => {

@@ -1188,6 +1188,7 @@ export class WorkflowAgent {
         resolvedModel: modelSpec,
         modelSource,
         label: options.label,
+        prompt,
       });
       if (decision.action === "use") {
         modelSpec = decision.model;

@@ -23,6 +23,11 @@ export interface PreSpawnModelContext {
   resolvedModel?: string;
   modelSource: ModelSource;
   label?: string;
+  /**
+   * The agent's task prompt, so a host policy can choose a model by what the agent is asked to do
+   * (e.g. a classifier-driven router). Read-only input; the resolver cannot change it.
+   */
+  prompt?: string;
 }
 
 export type PreSpawnModelDecision =
