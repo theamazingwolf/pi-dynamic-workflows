@@ -86,18 +86,26 @@
     "acorn": "^8.16.0"
   },
   "peerDependencies": {
-    "@earendil-works/pi-coding-agent": ">=0.80.8",
-    "@earendil-works/pi-tui": ">=0.80.6",
+    "@earendil-works/pi-coding-agent": "*",
+    "@earendil-works/pi-tui": "*",
     "typebox": "*"
   },
   "devDependencies": {
     "@biomejs/biome": "2.4.16",
-    "@earendil-works/pi-ai": "latest",
-    "@earendil-works/pi-coding-agent": "latest",
-    "@earendil-works/pi-tui": "latest",
+    "@earendil-works/pi-ai": "1.2.0",
+    "@earendil-works/pi-coding-agent": "1.2.0",
+    "@earendil-works/pi-tui": "1.2.0",
     "fast-check": "^4.8.0",
     "tsx": "latest",
     "typebox": "latest",
     "typescript": "latest"
+  },
+  "overrides": {
+    "@earendil-works/pi-agent-core": "1.2.0",
+    "@earendil-works/pi-ai": "$@earendil-works/pi-ai",
+    "@earendil-works/pi-codemode": "1.2.0",
+    "@earendil-works/pi-mcp": "1.2.0",
+    "@earendil-works/pi-telemetry": "1.2.0",
+    "@earendil-works/pi-tui": "$@earendil-works/pi-tui"
   }
 }

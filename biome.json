@@ -6,6 +6,7 @@
       "!dist",
       "!node_modules",
       "!.pi",
+      "!.scratch",
       "!docs/workflow-context-surfaces.json",
       "!skills/workflow-authoring/examples/*.js"
     ]
